@@ -29,5 +29,24 @@ describe("verify function", () => {
       .rejects
       .toThrowError(new Error('Transaction Not Found'))
   });
+})
 
+describe("refund function", () => {
+  // test("it should return an object", async () => {
+  //   try {
+  //     var res = await kkiapay.refund("1RNX12Q-8")
+  //     const toMatch = ['']
+  //   } catch(err) {
+  //     const toMatch = ['code', 'description']
+  //     for (const elt of toMatch) {
+  //       expect(elt in res).toBe(true)
+  //     }
+  //   }
+  // })
+
+  test("error case", async () => {
+    await expect(kkiapay.refund("xxxxxxxxx"))
+    .rejects
+    .toThrowError(Error)
+  })
 })
